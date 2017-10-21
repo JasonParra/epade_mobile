@@ -15,9 +15,8 @@ export default class Realizar_orden extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.title}> Realizar Orden</Text>
-                <View style={styles.nombreClientes}>
+                <View >
                     <Text> Nombre de Cliente: </Text>
-                    <Picker ></Picker>
                 </View>
             </View>
 
@@ -38,14 +37,6 @@ const styles = StyleSheet.create({
         width: 375,
         textAlign: 'center',
     },
-
-    nombreClientes: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'flex-start'
-        
-
-    }
 
 
 });
