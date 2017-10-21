@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput, Button
+  TextInput,
+  Button
 } from 'react-native';
 
 export default class LogForm extends Component {
@@ -13,8 +14,7 @@ export default class LogForm extends Component {
      <View style={styles.container}>
      <TextInput placeholder = "username"style={styles.input}/>
      <TextInput placeholder = "password" secureTextEntry style={styles.input}/>
-     <Button style={styles.button} title="Log in" onPress={null}
-/>
+     <Button style={styles.button} title="Log in" onPress={null}/>
      </View>
     );
   }
