@@ -5,20 +5,56 @@ import {
     Text,
     View,
     Button,
-    Picker
+    Picker,
+    TextInput
 } from 'react-native';
 
 
 
 export default class Realizar_orden extends Component {
+
+
     render() {
+
         return (
+
             <View style={styles.container}>
                 <Text style={styles.title}> Realizar Orden</Text>
-                <View >
-                    <Text> Nombre de Cliente: </Text>
-                </View>
+                <Text style={styles.titleInput}> Nombre de Cliente: </Text>
+                <Picker style={styles.picker}
+                    selectedValue={null}
+                    onValueChange={(lang) => this.setState({ language: lang })}>
+                    <Picker.Item label="Java" value="java" />
+                    <Picker.Item label="JavaScript" value="js" />
+                </Picker>
+                <Text style={styles.titleInput}> Nombre de Producto: </Text>
+                <Picker style={styles.picker}
+                    selectedValue={null}
+                    onValueChange={(lang) => this.setState({ language: lang })}>
+                    <Picker.Item label="Java" value="java" />
+                    <Picker.Item label="JavaScript" value="js" />
+                </Picker>
+                <Text style={styles.titleInput}> Cantidad de Producto: </Text>
+                <Picker style={styles.picker}
+                    selectedValue={null}
+                    onValueChange={(lang) => this.setState({ language: lang })}>
+                    <Picker.Item label="Java" value="java" />
+                    <Picker.Item label="JavaScript" value="js" />
+                </Picker>
+                <Text style={styles.titleInput}> Cantidad de Producto: </Text>
+                <TextInput
+                    keyboardType='numeric'
+                    onChangeText={(text) => this.onChanged(text)}
+                    value={null /*this.state.myNumber*/}
+                    maxLength={10}  //setting limit of input
+                />
+                <Text></Text>
+                <Text></Text>
+                <Button style={styles.button} title="Confirmar" onPress={null}/>
+
             </View>
+
+
 
         );
     }
@@ -27,18 +63,42 @@ export default class Realizar_orden extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#eee'
+        padding: 30,
+        backgroundColor: '#eee',
+
     },
 
     title: {
         color: 'black',
         marginTop: 20,
+        marginBottom: 30,
         fontSize: 20,
-        width: 375,
+        width: 325,
         textAlign: 'center',
     },
 
+    titleInput: {
+        color: 'black',
+        marginTop: 15,
+        fontSize: 15,
+        width: 335,
+        textAlign: 'center'
+    },
 
+    picker: {
+        width: 100,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal:140
+    },
+    button:{
+        height: 40,
+        width:250,
+        backgroundColor: "#841584",
+        paddingHorizontal: 100,            
+        marginTop:20
+    }
 });
 
 
