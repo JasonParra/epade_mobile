@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import {
     Platform,
     StyleSheet,
@@ -6,8 +7,10 @@ import {
     View,
     Button,
     Picker,
-    TextInput
+    TextInput,
+    TouchableOpacity
 } from 'react-native';
+
 
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 
@@ -15,18 +18,43 @@ import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-ta
 
 export default class Ver_clientes extends Component {
 
-
     render() {
+   
+        var names = ["jason","jorge", "julio","Paola","Rafael","Manuel","Maria","Juan"];
 
-        const tableHead = ['Nombre', 'Apellido', 'Direccion','Visitado'];
+        var name = new Array();
+        
+        name.push(<Text style={styles.link}
+            onPress={() => Linking.openURL('http://google.com')}>
+             names[0]
+        </Text>);
+
+          name.push(<Text style={styles.link}
+            onPress={() => Linking.openURL('http://google.com')}>
+             names[1]
+        </Text>);
+
+        
+
+        var visitado = <TouchableOpacity style={styles.btn} onPress={null}>
+            <Text style={styles.btnText}> no </Text>
+        </TouchableOpacity>;
+
+
+        const tableHead = ['Nombre', 'Direccion', 'Telefono', 'visitado'];
         const tableData = [
-            ['Nombre#1', 'Nombre#2', 'Nombre#3', 'Nombre#4', 'Nombre#5', 'Nombre#6', 'Nombre#7', 'Nombre#8'],
-            ['Apellido#1', 'Apellido#2', 'Apellido#3', 'Apellido#4', 'Apellido#5', 'Apellido#6', 'Apellido#7', 'Apellido#8'],
-            ['Direccion#1', 'Direccion#2', 'Direccion#3', 'Direccion#4', 'Direccion#5', 'Direccion#6', 'Direccion#7', 'Direccion#8'],
-            ['no', 'no', 'no', 'no', 'no', 'no', 'no', 'no']
-           
-            
-        ]
+            [name[0] , 'Direccion#1', '000.000.0000', visitado],
+            [name[1] , 'Direccion#2', '000.000.0000', 'no'],
+            ['Nombre#3', 'Direccion#3', '000.000.0000', 'no'],
+            ['Nombre#4', 'Direccion#4', '000.000.0000', 'no'],
+            ['Nombre#5', 'Direccion#5', '000.000.0000', 'no'],
+            ['Nombre#6', 'Direccion#6', '000.000.0000', 'no'],
+            ['Nombre#7', 'Direccion#7', '000.000.0000', 'no'],
+            ['Nombre#8', 'Direccion#8', '000.000.0000', 'no'],
+            ['Nombre#8', 'Direccion#8', '000.000.0000', 'no'],
+            ['Nombre#8', 'Direccion#8', '000.000.0000', 'no'],
+            ['Nombre#8', 'Direccion#8', '000.000.0000', 'no'],
+        ];
 
         return (
 
@@ -35,12 +63,11 @@ export default class Ver_clientes extends Component {
                 <Text style={styles.title}> Lista de Clientes:</Text>
 
                 <Table style={styles.table} borderStyle={{ borderWidth: 0.5, borderColor: '#c8e1ff' }}>
-                    <Row data={tableHead} style={styles.head} textStyle={styles.text} flexArr={[1, 1, 1, 1]} />
-                    <Cols data={tableData} textStyle={styles.text} heightArr={[20, 50]} flexArr={[1, 1, 1, 1]} />
+                    <Row data={tableHead} style={styles.head} textStyle={styles.text} flexArr={[1.1, 1.5, 1.3, 0.8]} />
+                    <Rows data={tableData} style={styles.head} textStyle={styles.text} flexArr={[1.1, 1.5, 1.3, 0.8]} />
                 </Table>
-
+                <Text></Text>
                 <Button style={styles.button} title="Salir" onPress={null} />
-
             </View>
 
         );
@@ -58,32 +85,46 @@ const styles = StyleSheet.create({
 
     title: {
         color: 'black',
-        marginTop: 20,
-        marginBottom: 30,
-        fontSize: 20,
+        marginBottom: 10,
+        fontSize: 18,
         width: 325,
         textAlign: 'center',
     },
 
     button: {
         height: 40,
-        width: 250,
+        width: 220,
         backgroundColor: "#841584",
         paddingHorizontal: 100,
-        marginTop: 20,
-        marginBottom: 30
+        marginTop: 30
     },
-    table: { 
-        width: 320,
-        height:380         
+    table: {
+        width: 350,
+        height: 400,
+        marginBottom: 5
     },
-    head: { 
-        height: 40, 
-        backgroundColor: '#f1f8ff' 
+    head: {
+        height: 40,
+        backgroundColor: '#f1f8ff'
     },
 
-    text: { 
+    text: {
         textAlign: 'center'
+    },
+    btnText: {
+        color: 'white',
+        textAlign: 'center',
+        fontSize: 16
+
+    },
+    btn: {
+        backgroundColor: "#e74c3c"
+
+    },
+    link:{
+        color: 'blue',
+        textAlign: 'center'
+        
     }
 
 });

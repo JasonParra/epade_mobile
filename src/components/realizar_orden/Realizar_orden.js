@@ -6,7 +6,8 @@ import {
     View,
     Button,
     Picker,
-    TextInput
+    TextInput,
+    TouchableOpacity
 } from 'react-native';
 
 
@@ -34,12 +35,12 @@ export default class Realizar_orden extends Component {
                     <Picker.Item label="Java" value="java" />
                     <Picker.Item label="JavaScript" value="js" />
                 </Picker>
-                <Text style={styles.titleInput}> Cantidad de Producto: </Text>
+                <Text style={styles.titleInput}> Metodo de Pago: </Text>
                 <Picker style={styles.picker}
                     selectedValue={null}
                     onValueChange={(lang) => this.setState({ language: lang })}>
-                    <Picker.Item label="Java" value="java" />
-                    <Picker.Item label="JavaScript" value="js" />
+                    <Picker.Item label="Cheque" value="java" />
+                    <Picker.Item label="Efectivo" value="js" />
                 </Picker>
                 <Text style={styles.titleInput}> Cantidad de Producto: </Text>
                 <TextInput
@@ -48,10 +49,10 @@ export default class Realizar_orden extends Component {
                     value={null /*this.state.myNumber*/}
                     maxLength={10}  //setting limit of input
                 />
-                <Text></Text>
-                <Text></Text>
-                <Button style={styles.button} title="Confirmar" onPress={null}/>
 
+                <TouchableOpacity style={styles.btn} onPress={null}>
+                <Text style = {styles.btnText}> Confirmar </Text>
+                </TouchableOpacity>
             </View>
 
 
@@ -92,12 +93,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal:140
     },
-    button:{
-        height: 40,
-        width:250,
-        backgroundColor: "#841584",
-        paddingHorizontal: 100,            
-        marginTop:20
+    btnText:{
+        color:'white',
+        textAlign:'center',
+        fontSize: 16
+        
+    },
+
+    btn:{
+        marginTop: 40,
+        paddingVertical: 10,    
+        backgroundColor: "#3498db"
     }
 });
 

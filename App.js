@@ -9,16 +9,16 @@ import Menu_chofer from "./src/components/dashboard_chofer/Menu_chofer";
 import Menu_vendedor from "./src/components/dashboard_vendedor/Menu_vendedor";
 import Realizar_orden from "./src/components/realizar_orden/Realizar_orden";
 import Ver_clientes from "./src/components/ver_clientes/Ver_clientes";
-
-
-
+import Ver_ordenes from "./src/components/ver_ordenes/Ver_ordenes";
 
 import React, { Component } from 'react';
 import {
+
   Platform,
   StyleSheet,
   Text,
   View
+
 } from 'react-native';
 
 
