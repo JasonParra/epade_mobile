@@ -83,20 +83,9 @@ const styles = StyleSheet.create({
         paddingVertical:0
 
 
-    },
+    }
 
-    btnText: {
-        color: 'white',
-        textAlign: 'center',
-        fontSize: 16
     
-      },
-    
-      btn: {
-        marginBottom: 50,
-        paddingVertical: 10,
-        backgroundColor: "#3498db"
-      }
 
 
 

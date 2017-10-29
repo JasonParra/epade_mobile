@@ -24,17 +24,16 @@ export default class Ver_clientes extends Component {
 
         var name = new Array();
         
+        for(let i=0; i<8; i++)
+        {
         name.push(<Text style={styles.link}
             onPress={() => Linking.openURL('http://google.com')}>
-             names[0]
+            {
+             names[i]
+            }
         </Text>);
-
-          name.push(<Text style={styles.link}
-            onPress={() => Linking.openURL('http://google.com')}>
-             names[1]
-        </Text>);
-
         
+    }
 
         var visitado = <TouchableOpacity style={styles.btn} onPress={null}>
             <Text style={styles.btnText}> no </Text>
@@ -43,17 +42,14 @@ export default class Ver_clientes extends Component {
 
         const tableHead = ['Nombre', 'Direccion', 'Telefono', 'visitado'];
         const tableData = [
-            [name[0] , 'Direccion#1', '000.000.0000', visitado],
-            [name[1] , 'Direccion#2', '000.000.0000', 'no'],
-            ['Nombre#3', 'Direccion#3', '000.000.0000', 'no'],
-            ['Nombre#4', 'Direccion#4', '000.000.0000', 'no'],
-            ['Nombre#5', 'Direccion#5', '000.000.0000', 'no'],
-            ['Nombre#6', 'Direccion#6', '000.000.0000', 'no'],
-            ['Nombre#7', 'Direccion#7', '000.000.0000', 'no'],
-            ['Nombre#8', 'Direccion#8', '000.000.0000', 'no'],
-            ['Nombre#8', 'Direccion#8', '000.000.0000', 'no'],
-            ['Nombre#8', 'Direccion#8', '000.000.0000', 'no'],
-            ['Nombre#8', 'Direccion#8', '000.000.0000', 'no'],
+            [name[0], 'Direccion#1', '000.000.0000', visitado],
+            [name[1], 'Direccion#2', '000.000.0000', visitado],
+            [name[2], 'Direccion#3', '000.000.0000', visitado],
+            [name[3], 'Direccion#4', '000.000.0000', visitado],
+            [name[4], 'Direccion#5', '000.000.0000', visitado],
+            [name[5], 'Direccion#6', '000.000.0000', visitado],
+            [name[6], 'Direccion#7', '000.000.0000', visitado],
+            [name[7], 'Direccion#8', '000.000.0000', visitado]
         ];
 
         return (
@@ -123,7 +119,7 @@ const styles = StyleSheet.create({
     },
     link:{
         color: 'blue',
-        textAlign: 'center'
+        textAlign: 'center'        
         
     }
 

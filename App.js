@@ -25,7 +25,7 @@ import {
 export default class App extends Component {
   render() {
     return (
-      <Ver_clientes/>
+      <Ver_ordenes/>
     );
   }
 }
